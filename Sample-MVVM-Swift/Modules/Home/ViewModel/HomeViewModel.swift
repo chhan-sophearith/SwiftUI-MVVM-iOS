@@ -15,22 +15,9 @@ class HomeViewModel: ObservableObject {
     func getUserList() {
         ApiManager.shared.apiConnection(url: ApiEndPoint.getUsers.rawValue,
                                         method: .GET,
-                                        param: nil) { response in
+                                        param: nil) { (data: [User]) in
             DispatchQueue.main.async {
-                // Codable
-                Utilize.shared.validateModel(model: [User].self,
-                                             data: response, fun: "getUserList") { data in
-                    self.users = data
-                }
-                // JSONSerialization
-                if let jsonObject = try? JSONSerialization.jsonObject(with: response, options: []) as? [[String: Any]] {
-                    for jsonObject in jsonObject {
-                        if let name = jsonObject["name"] as? String,
-                            let id = jsonObject["id"] as? Int {
-                            self.users2.append(User(id: id, name: name, username: "", email: "", address: nil, phone: "", website: "", company: nil))
-                        }
-                    }
-                }
+                self.users = data
             }
         }
     }
