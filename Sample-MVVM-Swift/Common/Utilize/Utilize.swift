@@ -63,10 +63,12 @@ class Utilize {
         self.printerFormat(url: url, data: data, error: error)
     }
     
-    func validateModel<T: Codable>(model: T.Type, data: Data, fun: String, response: (T)->()) {
+    func validateModel<T: Codable>(model: T.Type, data: Data?, fun: String = "", response: (T) -> Void) {
         do {
-            let json = try JSONDecoder().decode(T.self, from: data)
-            response(json)
+            if let newData = data {
+                let json = try JSONDecoder().decode(T.self, from: newData)
+                response(json)
+            }
         } catch let DecodingError.typeMismatch(type, context) {
             print(type)
             self.showAlert(title: "Error", message: context.showError(functionName: fun))

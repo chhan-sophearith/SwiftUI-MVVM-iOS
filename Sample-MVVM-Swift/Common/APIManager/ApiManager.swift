@@ -35,7 +35,7 @@ class ApiManager {
         return headers
     }
     
-    func apiConnection(url: String, method: HTTPMethod, param: Parameters?, res: @escaping Success) {
+    func apiConnection<T: Codable>(url: String, method: HTTPMethod, param: Parameters?, res: @escaping (T) -> Void) {
         
         let strUrl = URL(string: ApiEndPoint.baseUrl.rawValue + url)
         
@@ -76,32 +76,17 @@ class ApiManager {
             if let httpResponse = response as? HTTPURLResponse {
                 if (200...299).contains(httpResponse.statusCode) {
                     Utilize.shared.debugerResult(urlRequest: newRequest, data: data, error: false)
-                    res(data!)
+                   
+                    Utilize.shared.validateModel(model: T.self, data: data) { objectData in
+                        res(objectData)
+                    }
+   
                 } else {
                     Utilize.shared.debugerResult(urlRequest: newRequest, data: data, error: true)
                     print("error_code: \(httpResponse.statusCode)")
-                    self.mapingError(data: data!)
                 }
             }
         })
         task.resume()
-    }
-    
-    func mapingError(data: Data){
-//          print("error_data: \(data.toJSON() as Any)")
-//          Validator.validateModel(model: ErrorModel().self, data: data, fun: "") { (res) in
-//              DispatchQueue.main.async {
-//                  AlertMessage.shared.showAlert(message: res.message ?? "")
-//              }
-//          }
-    }
-    
-    func getList(success: @escaping Success) {
-//        let url = URL(string: ApiKey.baseUrl + ApiEndPoint.getList)
-//        apiConnection(url: url!,
-//                      method: .GET,
-//                      param: nil,
-//                      headers: nil,
-//                      res: success)
     }
 }
