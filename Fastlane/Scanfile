@@ -4,7 +4,7 @@
 workspace "Sample-MVVM-Swift.xcodeproj/project.xcworkspace"
 scheme "Sample-MVVM-Swift"
 sdk "iphonesimulator"
-device "iPhone 11"
+device "iPhone 15 Pro Max"
 code_coverage true
 xcargs '-parallelizeTargets'
 prelaunch_simulator true
