@@ -2,12 +2,25 @@ fastlane_version '2.221.1'
 default_platform :ios
 
 platform :ios do
-  desc 'Build and export the IPA file'
-  lane :build_ipa do
-    build_app(
+
+  lane :unit_test do
+    scan(
       workspace: "Sample-MVVM-Swift.xcodeproj/project.xcworkspace",
       scheme: "Sample-MVVM-Swift",
-      export_method: "ad-hoc"
+      derived_data_path: "build",
+      code_coverage: true
     )
   end
+  
+  lane :build_ipa do
+    gym(
+      workspace: "Sample-MVVM-Swift.xcodeproj/project.xcworkspace",
+      scheme: "Sample-MVVM-Swift",
+      export_method: "development",
+      allowProvisioningUpdates: true
+    )
+  end
+  
+
 end
+
