@@ -9,4 +9,29 @@ platform :ios do
       skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution]
     )
   end
+
+  desc 'Builds the project and generates an IPA'
+  lane :build do |options|
+    clean_build = options[:clean] || true
+    scheme_name = options[:scheme] || "Sample-MVVM-Swift"
+    
+    # Run unit tests before building the IPA
+    unit_test(
+      clean: clean_build,
+      skip_package_dependencies_resolution: false
+    )
+
+    gym(
+      scheme: scheme_name,
+      clean: clean_build,
+      export_method: "app-store", # or 'ad-hoc', 'enterprise', 'development'
+      output_directory: "./build",
+      output_name: "YourApp.ipa",
+      include_symbols: false,
+      include_bitcode: false,
+      export_team_id: "K6KHZK67R9",
+      export_xcargs: "-allowProvisioningUpdates"
+    )
+  end
+
 end
