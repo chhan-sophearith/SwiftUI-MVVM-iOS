@@ -3,28 +3,12 @@ default_platform :ios
 
 platform :ios do
 
-  lane :unit_test do
+  lane :build_ipa do
     scan(
       workspace: "Sample-MVVM-Swift.xcodeproj/project.xcworkspace",
       scheme: "Sample-MVVM-Swift",
       derived_data_path: "./build",
       code_coverage: true
-    )
-  end
-  
-  lane :build_ipa do
-    gym(
-      workspace: "Sample-MVVM-Swift.xcodeproj/project.xcworkspace",
-      scheme: "Sample-MVVM-Swift",
-      export_method: "ad-hoc",
-      export_options: {
-        provisioningProfiles: {
-          "com.luckyinfos.InfoWeb": "65d91404-71de-4e69-90be-e1d8329c4b4c"
-        }
-      },
-      allowProvisioningUpdates: true,
-      skip_profile_detection: true,  # Skip automatic profile detection
-      use_system_scm: true 
     )
   end
 end
