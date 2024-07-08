@@ -2,7 +2,7 @@
 //  ApiEndPoint.swift
 //  Sample-MVVM-Swift
 //
-//  Created by Chhan Sophearith on 24/10/23.
+//  Created by Chhan Sophearith on 24/10/2023.
 //
 
 import Foundation
