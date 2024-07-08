@@ -3,5 +3,6 @@
 
 project "Sample-MVVM-Swift.xcodeproj"
 scheme "Sample-MVVM-Swift"
-xcargs: "-allowProvisioningUpdates"
+code_coverage true
+xcargs '-parallelizeTargets'
 derived_data_path "Build/"
