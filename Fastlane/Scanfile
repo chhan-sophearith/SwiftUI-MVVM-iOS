@@ -1,7 +1,7 @@
 # For more information about this configuration visit
 # https://github.com/fastlane/scan#scanfile
 
-project "Sample-MVVM-Swift.xcodeproj"
+workspace "Sample-MVVM-Swift.xcodeproj/project.xcworkspace"
 scheme "Sample-MVVM-Swift"
 code_coverage true
 xcargs '-parallelizeTargets'
