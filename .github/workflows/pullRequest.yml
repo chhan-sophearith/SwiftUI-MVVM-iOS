@@ -9,27 +9,33 @@ on:
 jobs:
   test:
     runs-on: macos-latest
+    
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
 
-      - uses: maxim-lobanov/setup-xcode@v1
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
 
-      - uses: ruby/setup-ruby@v1
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.10
 
       - name: Install Bundler
-        run: gem install bundler
+        run: gem install bundler -v 2.4.22
 
-      - name: Install gems
+      - name: Install Gems
         run: bundle install
 
-      - name: Swift Packages Cache
+      - name: Cache Swift Packages
         uses: actions/cache@v2
         id: cache
         with:
@@ -40,9 +46,9 @@ jobs:
           restore-keys: ${{ runner.os }}-deps-v1-
 
       - name: Run Tests (No Cache)
-        if: steps.setup.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         run: bundle exec fastlane unit_test
       
       - name: Run Tests (Cache)
-        if: steps.setup.outputs.cache-hit == 'true'
+        if: steps.cache.outputs.cache-hit == 'true'
         run: bundle exec fastlane unit_test skip_package_dependencies_resolution:true
