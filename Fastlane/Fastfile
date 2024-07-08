@@ -7,7 +7,7 @@ platform :ios do
     scan(
       workspace: "Sample-MVVM-Swift.xcodeproj/project.xcworkspace",
       scheme: "Sample-MVVM-Swift",
-      derived_data_path: "build",
+      derived_data_path: "./build",
       code_coverage: true
     )
   end
