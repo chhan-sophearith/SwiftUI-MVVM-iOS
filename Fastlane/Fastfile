@@ -16,7 +16,7 @@ platform :ios do
     gym(
       workspace: "Sample-MVVM-Swift.xcodeproj/project.xcworkspace",
       scheme: "Sample-MVVM-Swift",
-      export_method: "development",
+      export_method: "ad-hoc",
       allowProvisioningUpdates: true
     )
   end
