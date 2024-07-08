@@ -11,7 +11,7 @@ platform :ios do
   end
 
   desc 'Builds the project and generates an IPA'
-  lane :build do |options|
+  lane :unit_test do |options|
     clean_build = options[:clean] || true
     scheme_name = options[:scheme] || "Sample-MVVM-Swift"
     
