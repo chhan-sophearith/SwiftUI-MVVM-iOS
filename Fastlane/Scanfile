@@ -3,6 +3,7 @@
 
 project "Sample-MVVM-Swift.xcodeproj"
 scheme "Sample-MVVM-Swift"
+export_method: "ad-hoc"
 sdk "iphonesimulator"
 device "iPhone 15 Pro Max"
 code_coverage true
