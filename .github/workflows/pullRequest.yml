@@ -38,6 +38,13 @@ jobs:
       - name: Install Gems
         run: bundle install
 
-      - name: Build IPA using Fastlane
+      - name: Build and Test using Fastlane
         run: |
           bundle exec fastlane unit_test
+
+      - name: Upload IPA Artifact
+        if: success() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Sample-MVVM-Swift.ipa
+          path: ./build/YourAppName.ipa
