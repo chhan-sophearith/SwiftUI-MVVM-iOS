@@ -10,8 +10,9 @@ platform :ios do
       # )
 
       build_app(
-        project "Sample-MVVM-Swift.xcodeproj",
+     #   project "Sample-MVVM-Swift.xcodeproj",
         scheme: "Sample-MVVM-Swift",  # Replace with your actual scheme name
+        project "Sample-MVVM-Swift.xcodeproj",
         export_method: "ad-hoc",  # Distribution method: ad-hoc, app-store, development, enterprise
         output_directory: "./build",  # Optional: Directory where IPA will be saved
         output_name: "ipaFile.ipa"  # Optional: Name of the IPA file
