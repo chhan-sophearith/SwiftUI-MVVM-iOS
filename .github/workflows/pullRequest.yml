@@ -47,4 +47,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Sample-MVVM-Swift.ipa
-          path: ./build/YourAppName.ipa
+          path: ./build/Sample-MVVM-Swift.ipa
