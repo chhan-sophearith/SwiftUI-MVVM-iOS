@@ -22,7 +22,9 @@ platform :ios do
           "com.luckyinfos.InfoWeb": "65d91404-71de-4e69-90be-e1d8329c4b4c"
         }
       },
-      allowProvisioningUpdates: true
+      allowProvisioningUpdates: true,
+      skip_profile_detection: true,  # Skip automatic profile detection
+      use_system_scm: true 
     )
   end
 end
