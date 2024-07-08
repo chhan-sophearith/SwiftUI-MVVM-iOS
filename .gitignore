@@ -23,3 +23,6 @@ DerivedData
 Pods/
 Blog
 !Podfile.lock
+# fastlane
+Fastlane/report.xml
+Fastlane/test_output
