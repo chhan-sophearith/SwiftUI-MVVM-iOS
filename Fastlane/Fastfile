@@ -17,10 +17,13 @@ platform :ios do
       workspace: "Sample-MVVM-Swift.xcodeproj/project.xcworkspace",
       scheme: "Sample-MVVM-Swift",
       export_method: "ad-hoc",
+      export_options: {
+        provisioningProfiles: {
+          "com.luckyinfos.InfoWeb": "65d91404-71de-4e69-90be-e1d8329c4b4c"
+        }
+      },
       allowProvisioningUpdates: true
     )
   end
-  
-
 end
 
