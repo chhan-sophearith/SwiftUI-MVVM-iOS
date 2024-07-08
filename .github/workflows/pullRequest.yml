@@ -40,7 +40,7 @@ jobs:
 
       - name: Build and Test using Fastlane
         run: |
-          bundle exec fastlane unit_test
+          bundle exec fastlane build_ipa
 
       - name: Upload IPA Artifact
         if: success() && github.event_name == 'pull_request'

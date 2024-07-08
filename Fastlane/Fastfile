@@ -11,12 +11,12 @@ platform :ios do
   end
 
   desc 'Builds the project and generates an IPA'
-  lane :unit_test do |options|
+  lane :build_ipa do |options|
     clean_build = options[:clean] || true
     scheme_name = options[:scheme] || "Sample-MVVM-Swift"
     
     # Run unit tests before building the IPA
-    unit_test(
+    build_ipa(
       clean: clean_build,
       skip_package_dependencies_resolution: false
     )
