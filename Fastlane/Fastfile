@@ -2,28 +2,12 @@ fastlane_version '2.221.1'
 default_platform :ios
 
 platform :ios do
-  desc 'Builds the project and generates an IPA'
-  lane :build_ipa do |options|
-    clean_build = options[:clean].nil? ? true : options[:clean]
-    scheme_name = options[:scheme] || "Sample-MVVM-Swift"
-    
-    # Run unit tests before building the IPA (using scan for running tests)
-    scan(
-      scheme: scheme_name,
-      clean: clean_build
-    )
-
-    # Build the IPA using gym
-    gym(
-      scheme: scheme_name,
-      clean: clean_build,
-      export_method: "app-store", # or 'ad-hoc', 'enterprise', 'development'
-      output_directory: "./build",
-      output_name: "YourApp.ipa",
-      include_symbols: false,
-      include_bitcode: false,
-      export_team_id: "K6KHZK67R9",
-      export_xcargs: "-allowProvisioningUpdates"
+  desc 'Build and export the IPA file'
+  lane :build_ipa do
+    build_app(
+      workspace: "Sample-MVVM-Swift.xcodeproj/project.xcworkspace",
+      scheme: "Sample-MVVM-Swift",
+      export_method: "ad-hoc"
     )
   end
 end
