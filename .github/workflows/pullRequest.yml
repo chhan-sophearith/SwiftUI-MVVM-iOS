@@ -38,14 +38,14 @@ jobs:
       - name: Install Gems
         run: bundle install
 
-      - name: Cache Swift Packages
-        uses: actions/cache@v2
-        id: cache
-        with:
-          path: |
-            Build/SourcePackages
-            Build/Build/Products
-          key: ${{ runner.os }}-deps-v1-${{ hashFiles('BILDsolid.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
-          restore-keys: ${{ runner.os }}-deps-v1-
+      # - name: Cache Swift Packages
+      #   uses: actions/cache@v2
+      #   id: cache
+      #   with:
+      #     path: |
+      #       Build/SourcePackages
+      #       Build/Build/Products
+      #     key: ${{ runner.os }}-deps-v1-${{ hashFiles('BILDsolid.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
+      #     restore-keys: ${{ runner.os }}-deps-v1-
       - name: Build IPA
         run: bundle exec fastlane unit_test

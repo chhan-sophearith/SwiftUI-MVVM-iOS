@@ -4,9 +4,25 @@ default_platform :ios
 platform :ios do
     desc 'Builds project and executes unit tests'
     lane :unit_test do |options|
-      scan(
-        clean: options[:clean],
-        skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution]
+      # scan(
+      #   clean: options[:clean],
+      #   skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution]
+      # )
+
+      build_app(
+        project "Sample-MVVM-Swift.xcodeproj",
+        scheme: "Sample-MVVM-Swift",  # Replace with your actual scheme name
+        export_method: "ad-hoc",  # Distribution method: ad-hoc, app-store, development, enterprise
+        output_directory: "./build",  # Optional: Directory where IPA will be saved
+        output_name: "ipaFile.ipa"  # Optional: Name of the IPA file
       )
+
     end
 end
+
+
+# project "Sample-MVVM-Swift.xcodeproj"
+# scheme "Sample-MVVM-Swift"
+# code_coverage true
+# xcargs '-parallelizeTargets'
+# derived_data_path "Build/"
