@@ -2,25 +2,18 @@ fastlane_version '2.221.1'
 default_platform :ios
 
 platform :ios do
-  desc 'Builds project and executes unit tests'
-  lane :unit_test do |options|
-    scan(
-      clean: options[:clean],
-      skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution]
-    )
-  end
-
   desc 'Builds the project and generates an IPA'
   lane :build_ipa do |options|
-    clean_build = options[:clean] || true
+    clean_build = options[:clean].nil? ? true : options[:clean]
     scheme_name = options[:scheme] || "Sample-MVVM-Swift"
     
-    # Run unit tests before building the IPA
-    build_ipa(
-      clean: clean_build,
-      skip_package_dependencies_resolution: false
+    # Run unit tests before building the IPA (using scan for running tests)
+    scan(
+      scheme: scheme_name,
+      clean: clean_build
     )
 
+    # Build the IPA using gym
     gym(
       scheme: scheme_name,
       clean: clean_build,
@@ -33,5 +26,4 @@ platform :ios do
       export_xcargs: "-allowProvisioningUpdates"
     )
   end
-
 end
