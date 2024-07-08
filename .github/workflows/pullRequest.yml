@@ -46,5 +46,5 @@ jobs:
         if: success() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@v2
         with:
-          name: Sample-MVVM-Swift.ipa
-          path: ./build/Sample-MVVM-Swift.ipa
+          name: build-artifacts
+          path: ./build
