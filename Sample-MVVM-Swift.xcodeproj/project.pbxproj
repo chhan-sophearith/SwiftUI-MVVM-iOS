@@ -22,23 +22,6 @@
 		FAEEDC9E2AE7A91D002FF4E7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEDC9D2AE7A91C002FF4E7 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FAA9910F2AE23D6D003EDCB7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAA990F62AE23D6B003EDCB7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAA990FD2AE23D6B003EDCB7;
-			remoteInfo = "Sample-MVVM-Swift";
-		};
-		FAA991192AE23D6D003EDCB7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAA990F62AE23D6B003EDCB7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAA990FD2AE23D6B003EDCB7;
-			remoteInfo = "Sample-MVVM-Swift";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		FA794B672AE36B3A00C700E9 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FA958E042AE61A6A004BDD7C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -58,20 +41,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		FAA990FB2AE23D6B003EDCB7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAA9910B2AE23D6D003EDCB7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAA991152AE23D6D003EDCB7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,14 +215,6 @@
 					FAA990FD2AE23D6B003EDCB7 = {
 						CreatedOnToolsVersion = 15.0;
 					};
-					FAA9910D2AE23D6D003EDCB7 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = FAA990FD2AE23D6B003EDCB7;
-					};
-					FAA991172AE23D6D003EDCB7 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = FAA990FD2AE23D6B003EDCB7;
-					};
 				};
 			};
 			buildConfigurationList = FAA990F92AE23D6B003EDCB7 /* Build configuration list for PBXProject "Sample-MVVM-Swift" */;
@@ -284,20 +245,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAA9910C2AE23D6D003EDCB7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAA991162AE23D6D003EDCB7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -319,34 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAA9910A2AE23D6D003EDCB7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAA991142AE23D6D003EDCB7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FAA991102AE23D6D003EDCB7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FAA990FD2AE23D6B003EDCB7 /* Sample-MVVM-Swift */;
-			targetProxy = FAA9910F2AE23D6D003EDCB7 /* PBXContainerItemProxy */;
-		};
-		FAA9911A2AE23D6D003EDCB7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FAA990FD2AE23D6B003EDCB7 /* Sample-MVVM-Swift */;
-			targetProxy = FAA991192AE23D6D003EDCB7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FAA991202AE23D6D003EDCB7 /* Debug */ = {
@@ -535,78 +455,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				rgerb = "tetst ";
-			};
-			name = Release;
-		};
-		FAA991262AE23D6D003EDCB7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K6KHZK67R9;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sample-MVVM-Swift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sample-MVVM-Swift";
-			};
-			name = Debug;
-		};
-		FAA991272AE23D6D003EDCB7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K6KHZK67R9;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sample-MVVM-Swift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sample-MVVM-Swift";
-			};
-			name = Release;
-		};
-		FAA991292AE23D6D003EDCB7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K6KHZK67R9;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Sample-MVVM-Swift";
-			};
-			name = Debug;
-		};
-		FAA9912A2AE23D6D003EDCB7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K6KHZK67R9;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Sample-MVVM-Swift";
 			};
 			name = Release;
 		};
