@@ -5,4 +5,4 @@ workspace "Sample-MVVM-Swift.xcodeproj/project.xcworkspace"
 scheme "Sample-MVVM-Swift"
 code_coverage true
 xcargs '-parallelizeTargets'
-derived_data_path "./build"
+derived_data_path "Build/"
